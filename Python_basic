@@ -1,0 +1,121 @@
+# 사용자로부터 태어난 연도를 입력 받고, 현재 나이 출력
+year = int(input("태어난 연도를 입력하세요 >>> "))
+age = 2021 - year + 1
+print("현재 나이는", age, "세 입니다.")
+
+
+
+# 패스워드 입력
+origin_pass = "1234"
+input_pass = input("패스워드를 입력하세요 >>> ")
+if input_pass == origin_pass:
+    print("로그인 성공")
+elif input_pass == "":
+    print("아무것도 입력하지 않았습니다.")
+else:
+    print("로그인 실패")
+
+
+
+# 과목 점수 계산
+korean = int(input("국어 >>> "))
+math = int(input("수학 >>> "))
+english = int(input("영어 >>> "))
+
+total = korean + math + english
+avg = total / 3
+
+if 0 <= korean <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
+    if avg >= 80:
+        print("평균 80점 이상으로 합격하였습니다.")
+    else:
+        print("불합격")
+else:
+    print("잘못 입력하였습니다.")
+
+
+
+# 평균 턱걸이 횟수
+data = []
+
+x = int(input("1일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("2일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("3일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("4일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("5일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("6일차 턱걸이 횟수 >>>"))
+data.append(x)
+x = int(input("7일차 턱걸이 횟수 >>>"))
+data.append(x)
+
+total = data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6]
+avg = total / 7
+print(float(avg))
+
+
+
+# 구구단 출력하기
+x = int(input("몇 단을 출력할까요? >>> "))
+for i in range(1, 10):
+    print(x, "*", i, "=", x*i)
+
+
+
+#게임 메뉴
+while True:
+    print("[메뉴를 입력하세요]")
+    select = int(input("1.게임시작 2.랭킹보기 3.게임종료 "))
+
+    if select == 1:
+        print("-> 게임을 시작합니다.")
+    elif select == 2:
+        print("-> 게임을 시작합니다.")
+    elif select == 3:
+        print("-> 게임을 종료합니다")
+        break
+    else:
+        print("-> 다시 입력해주세요")
+
+
+
+# 한글 따라쓰기 점수 계산
+score = 0
+word_list = ["사랑해", "귀엽다", "고마워", "행복해"]
+print("Let's Learning Korean")
+for word in word_list:
+    print(word)
+    data = input()
+    if data == word:
+        score += 1
+
+print("전체 문제 개수: ", len(word_list))
+print("맞힌 개수: ", score)
+print("틀린 개수: ", len(word_list) - score)
+
+
+
+# 로또 번호 추출기
+import random
+
+def get_random_number():
+    number = random.randint(1, 45)
+    return number
+
+lotto_num = []  # 로또 번호를 저장할 리스트
+count = 0 # 현재 뽑은 숫자 개수
+
+while True:
+    if count > 5:   # 이미 뽑은 게 다섯 개일 때까지
+        break
+    random_number = get_random_number()
+    if random_number not in lotto_num:
+        lotto_num.append(random_number)
+        count += 1
+
+lotto_num.sort()
+print(lotto_num)
